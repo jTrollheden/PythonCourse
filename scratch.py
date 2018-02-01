@@ -22,14 +22,16 @@ read_coordinate_file('SampleCoordinates.txt')
 
 # Uppgift 2 - Punkterna plottas ut
 import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+from matplotlib import colors as mcolors
 
-
-def plot_points(coord_list):
+def plot_points(coord_list, connections):
     fig1 = plt.figure()
     fig1.gca()  # Only needed for the ipython %matplotlib inline to display something
     plt.plot(coord_list, ".b")
-    plt.show(block=False)
+    LineCollection(connections)
 
+    plt.show(block=False)
 
 plot_points(coord_list)
 
@@ -59,4 +61,23 @@ construct_graph_connections(coord_list, radius)
 indices=np.delete(indices, 0, axis=0)
 accDist=np.delete(accDist, 0, axis=0)
 
-# plt.show()
+
+# Uppgift 4
+N = len(coord_list)
+
+
+def construct_graph(indices, accdist, N):
+    from scipy.sparse import csr_matrix
+    row = indices[:, 0]
+    col = indices[:, 1]
+    data = accdist[:, 0]
+    return csr_matrix((data, (row-1, col-1)), shape=( N, N))
+
+
+construct_graph (indices, accDist, N)
+#7x7 matris som innehåller information om distanser mellan olika koordinater
+
+
+# Uppgift 5
+
+
