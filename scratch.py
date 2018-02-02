@@ -80,11 +80,12 @@ def plot_points(coord_list, connections, path):
 
         the_way.append(node)
     reco_path = LineCollection(the_way, linewidths=(5), color='r')
-    line_segments = LineCollection(lines)
+    line_segments = LineCollection(lines, linewidths=(0.3), color='cornflowerblue')
 
     fig1 = plt.figure()
     ax = fig1.gca() # Only needed for the ipython %matplotlib inline to display something
-    plt.plot(coord_list[:, 0],coord_list[:,1], ".b")
+
+    plt.scatter(coord_list[:, 0],coord_list[:,1], c="black", linewidths=0.5)
     ax.add_collection(line_segments)
     ax.add_collection(reco_path)
 
@@ -109,7 +110,6 @@ def construct_graph_connections(coord_list, radius):
             if dist < radius:
                 indices = np.vstack((indices, [x, k]))
                 accDist = np.vstack((accDist,dist))
-            print(k)
     indices = indices-1    #så att indexerna blir korrekta gentemot python syntaxen
     indices = np.delete(indices, 0, axis=0)
     for x in range(0, len(indices)):
@@ -142,8 +142,8 @@ def construct_fast_graph_connections(coord_list, radius):
             temp_indices = [x, in_range[k]]
             indices_fast = np.vstack((indices_fast, temp_indices))
 
-            dist = np.sqrt(((coord_list[x, 0] - coord_list[k, 0]) ** 2 + (
-                    coord_list[x, 1] - coord_list[k, 1]) ** 2))
+            dist = np.sqrt(((coord_list[x, 0] - coord_list[in_range[k], 0]) ** 2 + (
+                    coord_list[x, 1] - coord_list[in_range[k], 1]) ** 2))
             dist_fast = np.vstack((dist_fast, dist))
 
     indices_fast = np.delete(indices_fast, 0, axis=0)
@@ -164,9 +164,9 @@ N = len(coord_list)
 def construct_graph(indices, accdist, N):
     starttime=time.time()
     from scipy.sparse import csr_matrix
-    row = indices[:, 0]
-    col = indices[:, 1]
-    data = accdist[:, 0]
+    row = np.array(indices[:, 0])
+    col = np.array(indices[:, 1])
+    data = np.array(accdist[:, 0])
 
     endtime = "Computational time for constructing the graph: {}".format(time.time() - starttime)
     comptime.append((endtime))
@@ -175,9 +175,7 @@ def construct_graph(indices, accdist, N):
 
 # 0 = rad, 1 = kolumn, 2 = data
 
-
 sparse = construct_graph(indices, accDist, N)
-
 
 #NxN matris som innehåller information om distanser mellan olika koordinater
 

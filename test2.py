@@ -146,10 +146,13 @@ time_to_connections = time.time()
 placements, distance = construct_fast_graph_connections(coords, radius_search)
 time_to_connections = time.time() - time_to_connections
 
+print(placements)
+print(distance)
+print(len(coords))
+
 time_to_matrix = time.time()
 matrix = construct_graph(placements, distance, len(coords))
 time_to_matrix = time.time() - time_to_matrix
-
 
 time_to_dijkstra = time.time()
 a, b = dijkstra(matrix, directed=False, indices=stad_1, return_predecessors=True, unweighted=False, limit=9999)
