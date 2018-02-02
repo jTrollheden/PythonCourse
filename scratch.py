@@ -83,6 +83,7 @@ def plot_points(coord_list, connections, path):
     line_segments = LineCollection(lines, linewidths=(0.3), color='cornflowerblue')
 
     fig1 = plt.figure()
+    plt.axes().set_aspect('equal', 'datalim')
     ax = fig1.gca() # Only needed for the ipython %matplotlib inline to display something
 
     plt.scatter(coord_list[:, 0],coord_list[:,1], c="black", linewidths=0.5)
@@ -195,6 +196,8 @@ comptime.append((endtimedijk))
 
 # Uppgift 7
 def compute_path(predecessor_matrix, start_node, end_node):
+    #Då start_node redan blir indexerat i dijkstra för att spara tid så används inte start_node i denna funktion.
+    # Möjligheten att inkorporera start_node finns men skulle bara förlänga processtiden.
     starttime=time.time()
     steps=[]
     pos=end_node
