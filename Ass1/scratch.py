@@ -1,6 +1,9 @@
 import numpy as np
 import math
 import time
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+from scipy.sparse import csr_matrix
 
 
 
@@ -32,46 +35,41 @@ starttime_tot=time.time()
 filename=user_input()
 print(filename)
 
-# Uppgift 1, läser in, räknar raderna och använder det sedan som ett index för vilken rad koordinaterna motsvarar
 def read_coordinate_file(filename):
+    # Uppgift 1, läser in, splitar, stripar och därefter räknar om från latitud och longitud till x och y koordinater
+    # enligt mercator projektion mha giva formler från PDF Computer Assignment 1.
     starttime=time.time()
-    global coord_list
-    global num_lines
     fileid = open(filename, 'r')
-    num_lines = sum(1 for line in open(filename))
-    coord_list = np.zeros((num_lines, 2))
-    i = 0
+    coords = []
     for line in fileid:
         temp = line.split(',')
-        x = float(temp[1][:-2]) * math.pi / 180
-        y = math.log(math.tan(math.pi / 4 + float(temp[0][1:]) * math.pi / 360))
-        coord_list[i, :] = [x, y]
-        i += 1
+        x = float(temp[1].strip('}\n')) * math.pi / 180
+        y = math.log(math.tan(math.pi / 4 + float(temp[0].strip('{')) * math.pi / 360))
+        coords.append([x, y])
     fileid.close()
+    coords = np.array(coords)
     endtime = "Computational time for reading the txt file: {}".format(time.time() - starttime)
     comptime.append(endtime)
+    return coords
 
 
-read_coordinate_file(filename)
+coord_list = read_coordinate_file(filename)
 
-# Uppgift 2 - Punkterna plottas ut
-import matplotlib.pyplot as plt
-from matplotlib.collections import LineCollection
-from matplotlib import colors as mcolors
+
 
 def plot_points(coord_list, connections, path):
+    # Uppgift 2, 5 och 8 - punkterna, alla connections och den optimala vägen från start till slut plottas ut
     starttime=time.time()
-    #uppgift 5
     lines = []
     the_way=[]
+    lines1 = coord_list[connections]
+    print(lines1)
     for x in range(0,connections.shape[0]):
         line=[]
         for k in range(0,2):
             pointer = connections[x, k]
             line.append((coord_list[int(pointer), 0], coord_list[int(pointer), 1]))
         lines.append(line)
-
-    #Uppgift 8
     for x in range(0,len(path)-1):
         node=[]
         for k in range(x,x+2):
@@ -96,36 +94,32 @@ def plot_points(coord_list, connections, path):
     comptime.append(endtime)
 
 
-
 # Uppgift 3 -
 
 
 def construct_graph_connections(coord_list, radius):
+    # Uppgift 3: Enumerate looparna används för att räkna ut distanserna mellan varje punkt för att sedan
+    # jämföra dem med radien. De omvandlas sedan till numpy arrays för att kunna användas i construct graph funktionen.
     starttime=time.time()
-    indices = np.array([0, 0])
-    accDist = np.array([0])
-    for x in range(1,num_lines):
-        for k in range(x+1, num_lines+1):
-            dist = np.sqrt(((coord_list[int(k - 1), 0] - coord_list[int(x - 1), 0]) ** 2 + (
-                    coord_list[int(k - 1), 1] - coord_list[int(x - 1), 1]) ** 2))
-            if dist < radius:
-                indices = np.vstack((indices, [x, k]))
-                accDist = np.vstack((accDist,dist))
-    indices = indices-1    #så att indexerna blir korrekta gentemot python syntaxen
-    indices = np.delete(indices, 0, axis=0)
-    for x in range(0, len(indices)):
-        indices = np.vstack((indices, [indices[x, 1], indices[x, 0]]))
-        accDist = np.vstack((accDist, accDist[x]))
-    accDist = np.delete(accDist, 0, axis=0)
+    accdist = []
+    indices = []
+    for i in enumerate(coord_list):
+        coord0 = i[1]
+        for k in enumerate(coord_list):
+            coord1 = k[1]
+            d = math.sqrt((coord0[0]-coord1[0]) ** 2 + (coord0[1]-coord1[1]) ** 2)
+            if d < radius and d != 0:
+                accdist.append(d)
+                indices.append([i[0],k[0]])
 
+    accdist=np.array(accdist)
+    indices=np.array(indices)
     endtime = "Computational time for constructing the graph connections: {}".format(time.time() - starttime)
     comptime.append((endtime))
-    return indices, accDist
+    return indices, accdist
 
 
-#indices, accDist = construct_graph_connections(coord_list, radius)
-
-# här påkallas construct_graph_connections men den har kommenterats bort då den ger samma output som den snabbare
+indices, accdist = construct_graph_connections(coord_list, radius)
 
 
 # Uppgift 10
@@ -155,8 +149,7 @@ def construct_fast_graph_connections(coord_list, radius):
     return indices_fast, dist_fast
 
 
-indices, accDist = construct_fast_graph_connections(coord_list, radius)
-
+#indices, accdist = construct_fast_graph_connections(coord_list, radius)
 
 
 # Uppgift 4
@@ -164,19 +157,14 @@ N = len(coord_list)
 
 def construct_graph(indices, accdist, N):
     starttime=time.time()
-    from scipy.sparse import csr_matrix
-    row = np.array(indices[:, 0])
-    col = np.array(indices[:, 1])
-    data = np.array(accdist[:, 0])
-
+    matrix = csr_matrix((accdist, (indices[:, 0], indices[:, 1])), shape=(N, N)).toarray()
     endtime = "Computational time for constructing the graph: {}".format(time.time() - starttime)
-    comptime.append((endtime))
-
-    return csr_matrix((data, (row, col)), shape=(N, N)).toarray()
+    comptime.append(endtime)
+    return matrix
 
 # 0 = rad, 1 = kolumn, 2 = data
 
-sparse = construct_graph(indices, accDist, N)
+sparse = construct_graph(indices, accdist, N)
 
 #NxN matris som innehåller information om distanser mellan olika koordinater
 

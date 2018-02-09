@@ -30,5 +30,8 @@ hand.add_card((0,2))
 hand.add_card((2,3))
 hand.add_card((2,8))
 hand.add_card((1,10))
+hand.drop_card(0)
 hand.sort_cards(1)
 
+print(isinstance(hand, Hand))
+print(hand.cards)
