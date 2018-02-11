@@ -63,7 +63,7 @@ def plot_points(coord_list, connections, path):
     # Uppgift 2, 5 och 8 - punkterna, alla connections och den optimala vägen från start till slut plottas ut
     starttime=time.time()
 
-    line_segments = LineCollection(coord_list[connections], zorder=0, color='cornflowerblue', linewidth=(0.2))
+    line_segments = LineCollection(coord_list[connections], zorder=0, color='cornflowerblue', linewidth=(1))
     path=np.array([path[:-1], path[1:]]).T
     reco_path = LineCollection(coord_list[path], linewidths=(2), color='r')
 
@@ -88,22 +88,14 @@ def construct_graph_connections(coord_list, radius):
     # Uppgift 3: Enumerate looparna används för att räkna ut distanserna mellan varje punkt för att sedan
     # jämföra dem med radien. De omvandlas sedan till numpy arrays för att kunna användas i construct graph funktionen.
     starttime=time.time()
-    accdist = []
-    indices = []
-    for i in enumerate(coord_list):
-        coord0 = i[1]
-        for k in enumerate(coord_list):
-            coord1 = k[1]
-            d = math.sqrt((coord0[0]-coord1[0]) ** 2 + (coord0[1]-coord1[1]) ** 2)
-            if d < radius and d != 0:
-                accdist.append(d)
-                indices.append([i[0],k[0]])
-
-    accdist=np.array(accdist)
-    indices=np.array(indices)
+    lol1 = ss.distance.squareform(np.array(ss.distance.pdist(coord_list, metric='euclidean')))
+    lol1[lol1 > radius] = 0
+    indices=np.array(np.nonzero(lol1)).T
+    accdist = (lol1[indices[:,0],indices[:,1]])
     endtime = "Computational time for constructing the graph connections: {}".format(time.time() - starttime)
     comptime.append((endtime))
     return indices, accdist
+
 
 
 indices, accdist = construct_graph_connections(coord_list, radius)
@@ -165,11 +157,10 @@ sparse = construct_graph(indices, accdist, N)
 
 def dijk(sparse):
     starttimedijk = time.time()
-    dijk = dijkstra(sparse, return_predecessors=True, directed=False, indices=start_node, unweighted=False)
+    dijk = dijkstra(sparse, return_predecessors=True, directed=True, indices=(start_node), unweighted=False)
     endtimedijk = "Computational time for dijkstra: {}".format(time.time() - starttimedijk)
     comptime.append((endtimedijk))
     return dijk
-
 
 dijk = dijk(sparse)
 
