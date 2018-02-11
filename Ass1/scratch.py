@@ -4,6 +4,8 @@ import time
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
 from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import dijkstra
+import scipy.spatial as ss
 
 
 
@@ -60,31 +62,16 @@ coord_list = read_coordinate_file(filename)
 def plot_points(coord_list, connections, path):
     # Uppgift 2, 5 och 8 - punkterna, alla connections och den optimala vägen från start till slut plottas ut
     starttime=time.time()
-    lines = []
-    the_way=[]
-    lines1 = coord_list[connections]
-    print(lines1)
-    for x in range(0,connections.shape[0]):
-        line=[]
-        for k in range(0,2):
-            pointer = connections[x, k]
-            line.append((coord_list[int(pointer), 0], coord_list[int(pointer), 1]))
-        lines.append(line)
-    for x in range(0,len(path)-1):
-        node=[]
-        for k in range(x,x+2):
-            pointer = path[k]
-            node.append((coord_list[pointer, 0], coord_list[pointer, 1]))
 
-        the_way.append(node)
-    reco_path = LineCollection(the_way, linewidths=(5), color='r')
-    line_segments = LineCollection(lines, linewidths=(0.3), color='cornflowerblue')
+    line_segments = LineCollection(coord_list[connections], zorder=0, color='cornflowerblue', linewidth=(0.2))
+    path=np.array([path[:-1], path[1:]]).T
+    reco_path = LineCollection(coord_list[path], linewidths=(2), color='r')
 
     fig1 = plt.figure()
     plt.axes().set_aspect('equal', 'datalim')
     ax = fig1.gca() # Only needed for the ipython %matplotlib inline to display something
 
-    plt.scatter(coord_list[:, 0],coord_list[:,1], c="black", linewidths=0.5)
+    plt.scatter(coord_list[:, 0],coord_list[:,1], c="black", s=8)
     ax.add_collection(line_segments)
     ax.add_collection(reco_path)
 
@@ -123,7 +110,6 @@ indices, accdist = construct_graph_connections(coord_list, radius)
 
 
 # Uppgift 10
-import scipy.spatial as ss
 
 def construct_fast_graph_connections(coord_list, radius):
     starttime = time.time()
@@ -155,6 +141,8 @@ def construct_fast_graph_connections(coord_list, radius):
 # Uppgift 4
 N = len(coord_list)
 
+# Konstruerar en sparse matris (nollor där ingen data finns) baserad på distanserna mellan de koordinater som
+# ligger inom den givna radien för respektive .txt fil
 def construct_graph(indices, accdist, N):
     starttime=time.time()
     matrix = csr_matrix((accdist, (indices[:, 0], indices[:, 1])), shape=(N, N)).toarray()
@@ -162,42 +150,49 @@ def construct_graph(indices, accdist, N):
     comptime.append(endtime)
     return matrix
 
-# 0 = rad, 1 = kolumn, 2 = data
-
 sparse = construct_graph(indices, accdist, N)
 
-#NxN matris som innehåller information om distanser mellan olika koordinater
 
-
-# Uppgift 5
+# Uppgift 5 - Se plot_graph
 
 
 # Uppgift 6
 
-from scipy.sparse.csgraph import dijkstra
+# I denna del matas en matris med dimensionerna (NxN) där N är antalet koordinater vi har fått inmatat från starten.
+# (i,j) i matrisen har värdet = distansen mellan koordinat i och j om den är mindre än radien (beroende på .txt fil)
+# Dijkstra kopplar samman alla dessa värden så att man har den kortaste distansen från en koordinat till alla andra
+# koordinater istället för endast till de som är innanför radien (som construct_graph gör)
 
-starttimedijk = time.time()
-dijk = dijkstra(sparse, return_predecessors=True, directed=False, indices=start_node, unweighted=False)
-endtimedijk = endtime = "Computational time for dijkstra: {}".format(time.time() - starttimedijk)
-comptime.append((endtimedijk))
+def dijk(sparse):
+    starttimedijk = time.time()
+    dijk = dijkstra(sparse, return_predecessors=True, directed=False, indices=start_node, unweighted=False)
+    endtimedijk = "Computational time for dijkstra: {}".format(time.time() - starttimedijk)
+    comptime.append((endtimedijk))
+    return dijk
 
+
+dijk = dijk(sparse)
 
 # Uppgift 7
-def compute_path(predecessor_matrix, start_node, end_node):
-    #Då start_node redan blir indexerat i dijkstra för att spara tid så används inte start_node i denna funktion.
+def compute_path(predecessor_matrix, end_node):
+    # Då start_node redan blir indexerat i dijkstra för att spara tid så används inte start_node i denna funktion.
     # Möjligheten att inkorporera start_node finns men skulle bara förlänga processtiden.
+    # I denna del används predecessor matrisen från dijksta algoritmen för att identifiera hur vägen ser ut. Funktionen
+    # går steg för steg igenom predecessor och skapar en lista med "best path"
     starttime=time.time()
     steps=[]
     pos=end_node
     while pos!=-9999:
-        steps.insert(0, pos)
+        steps.append(pos)
         pos=predecessor_matrix[pos]
+    steps.reverse()
     endtime = "Computational time for computing the path: {}".format(time.time() - starttime)
     comptime.append((endtime))
     return steps
 
 
-shortest_info = [compute_path(dijk[1], start_node, end_node), dijk[0][end_node]]
+shortest_info = [compute_path(dijk[1], end_node), dijk[0][end_node]]
+# Resultatet från compute_path tillsammans med total distans = shortest_info
 print("The shortest path is: {} with a total distance of: {}".format(shortest_info[0], shortest_info[1]))
 
 # Uppgift 8
