@@ -78,7 +78,6 @@ def construct_graph_connections(coord_list, radius):
     d[d > radius] = 0
     indices=np.array(np.nonzero(d)).T
     accdist = (d[indices[:,0],indices[:,1]])
-    print(accdist)
     endtime = "Computational time for constructing the graph connections: {}".format(time.time() - starttime)
     comptime.append((endtime))
     return indices, accdist
@@ -144,9 +143,8 @@ def compute_path(predecessor_matrix, end_node):
 
 # Här körs funktionerna
 comptime = []
-starttime_tot=time.time()
 a = user_input()
-print(a)
+starttime_tot=time.time()
 filename = a[0]
 radius = a[1]
 start_node = a[2]
@@ -156,7 +154,7 @@ print(filename)
 
 coord_list = read_coordinate_file(filename)
 
-#indices, accdist = construct_graph_connections(coord_list, radius)
+indices, accdist = construct_graph_connections(coord_list, radius)
 
 indices, accdist = construct_fast_graph_connections(coord_list, radius)
 
