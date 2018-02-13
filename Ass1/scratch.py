@@ -83,9 +83,9 @@ def construct_graph_connections(coord_list, radius):
     return indices, accdist
 
 
-# Uppgift 10
 
 def construct_fast_graph_connections(coord_list, radius):
+    # Uppgift 10
     starttime = time.time()
     temp = ss.cKDTree(coord_list)
     indices_fast = temp.query_pairs(radius, output_type = "ndarray")
@@ -108,14 +108,14 @@ def construct_graph(indices, accdist, N):
     return matrix
 
 
-# Uppgift 6
-
-# I denna del matas en matris med dimensionerna (NxN) där N är antalet koordinater vi har fått inmatat från starten.
-# (i,j) i matrisen har värdet = distansen mellan koordinat i och j om den är mindre än radien (beroende på .txt fil)
-# Dijkstra kopplar samman alla dessa värden så att man har den kortaste distansen från en koordinat till alla andra
-# koordinater istället för endast till de som är innanför radien (som construct_graph gör)
 
 def dijk(sparse):
+    # Uppgift 6
+
+    # I denna del matas en matris med dimensionerna (NxN) där N är antalet koordinater vi har fått inmatat från starten.
+    # (i,j) i matrisen har värdet = distansen mellan koordinat i och j om den är mindre än radien (beroende på .txt fil)
+    # Dijkstra kopplar samman alla dessa värden så att man har den kortaste distansen från en koordinat till alla andra
+    # koordinater istället för endast till de som är innanför radien (som construct_graph gör)
     starttimedijk = time.time()
     dijk = dijkstra(sparse, return_predecessors=True, directed=True, indices=(start_node), unweighted=False)
     endtimedijk = "Computational time for dijkstra: {}".format(time.time() - starttimedijk)
@@ -123,8 +123,8 @@ def dijk(sparse):
     return dijk
 
 
-# Uppgift 7
 def compute_path(predecessor_matrix, end_node):
+    # Uppgift 7
     # Då start_node redan blir indexerat i dijkstra för att spara tid så används inte start_node i denna funktion.
     # Möjligheten att inkorporera start_node finns men skulle bara förlänga processtiden.
     # I denna del används predecessor matrisen från dijksta algoritmen för att identifiera hur vägen ser ut. Funktionen
