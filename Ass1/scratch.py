@@ -8,34 +8,24 @@ from scipy.sparse.csgraph import dijkstra
 import scipy.spatial as ss
 
 
-
 def user_input():
-    global radius
-    global start_node
-    global end_node
     inp = input("What txt file do you want to read: Germany, Hungary or SampleCoordinates - Possible inputs: g, h and s")
     if inp == "g" or inp == "G":
         radius = 0.0025
         start_node = 1573
         end_node = 10584
-        return "GermanyCities.txt"
+        return "GermanyCities.txt", radius, start_node, end_node
     elif inp == "h" or inp == "H":
         radius = 0.005
         start_node = 311
         end_node = 702
-        return "HungaryCities.txt"
+        return "HungaryCities.txt", radius, start_node, end_node
     elif inp == "s" or inp == "S":
         radius = 0.08
         start_node = 0
         end_node = 5
-        return "SampleCoordinates.txt"
+        return "SampleCoordinates.txt", radius, start_node, end_node
 
-
-comptime = []
-starttime_tot=time.time()
-
-filename=user_input()
-print(filename)
 
 def read_coordinate_file(filename):
     # Uppgift 1, läser in, splitar, stripar och därefter räknar om från latitud och longitud till x och y koordinater
@@ -53,10 +43,6 @@ def read_coordinate_file(filename):
     endtime = "Computational time for reading the txt file: {}".format(time.time() - starttime)
     comptime.append(endtime)
     return coords
-
-
-coord_list = read_coordinate_file(filename)
-
 
 
 def plot_points(coord_list, connections, path):
@@ -88,17 +74,14 @@ def construct_graph_connections(coord_list, radius):
     # Uppgift 3: Enumerate looparna används för att räkna ut distanserna mellan varje punkt för att sedan
     # jämföra dem med radien. De omvandlas sedan till numpy arrays för att kunna användas i construct graph funktionen.
     starttime=time.time()
-    lol1 = ss.distance.squareform(np.array(ss.distance.pdist(coord_list, metric='euclidean')))
-    lol1[lol1 > radius] = 0
-    indices=np.array(np.nonzero(lol1)).T
-    accdist = (lol1[indices[:,0],indices[:,1]])
+    d = ss.distance.squareform(np.array(ss.distance.pdist(coord_list, metric='euclidean')))
+    d[d > radius] = 0
+    indices=np.array(np.nonzero(d)).T
+    accdist = (d[indices[:,0],indices[:,1]])
+    print(accdist)
     endtime = "Computational time for constructing the graph connections: {}".format(time.time() - starttime)
     comptime.append((endtime))
     return indices, accdist
-
-
-
-indices, accdist = construct_graph_connections(coord_list, radius)
 
 
 # Uppgift 10
@@ -106,46 +89,24 @@ indices, accdist = construct_graph_connections(coord_list, radius)
 def construct_fast_graph_connections(coord_list, radius):
     starttime = time.time()
     temp = ss.cKDTree(coord_list)
-    indices_fast = np.array([0, 0])
-    dist_fast = np.array([0])
-    for x in range(len(temp.data)):
-        in_range = (temp.query_ball_point(coord_list[x], radius))
-        in_range.remove(x)
-        for k in range(len(in_range)):
-            temp_indices = [x, in_range[k]]
-            indices_fast = np.vstack((indices_fast, temp_indices))
-
-            dist = np.sqrt(((coord_list[x, 0] - coord_list[in_range[k], 0]) ** 2 + (
-                    coord_list[x, 1] - coord_list[in_range[k], 1]) ** 2))
-            dist_fast = np.vstack((dist_fast, dist))
-
-    indices_fast = np.delete(indices_fast, 0, axis=0)
-    dist_fast = np.delete(dist_fast, 0, axis=0)
-
+    indices_fast = temp.query_pairs(radius, output_type = "ndarray")
+    indices_fast = np.vstack((indices_fast, (np.array(list(zip((indices_fast[:,1]), (indices_fast[:,0])))))))
+    dist_fast = (np.sqrt((coord_list[indices_fast[:, 0]][:, 0] - coord_list[indices_fast[:, 1]][:, 0])**2 +
+    (coord_list[indices_fast[:, 0]][:, 1] - coord_list[indices_fast[:, 1]][:, 1])**2))
     endtime = "Computational time for constructing the fast graph connections: {}".format(time.time() - starttime)
     comptime.append((endtime))
     return indices_fast, dist_fast
 
 
-#indices, accdist = construct_fast_graph_connections(coord_list, radius)
-
-
-# Uppgift 4
-N = len(coord_list)
-
-# Konstruerar en sparse matris (nollor där ingen data finns) baserad på distanserna mellan de koordinater som
-# ligger inom den givna radien för respektive .txt fil
 def construct_graph(indices, accdist, N):
+    # Uppgift 4
+    # Konstruerar en sparse matris (nollor där ingen data finns) baserad på distanserna mellan de koordinater som
+    # ligger inom den givna radien för respektive .txt fil
     starttime=time.time()
-    matrix = csr_matrix((accdist, (indices[:, 0], indices[:, 1])), shape=(N, N)).toarray()
+    matrix = csr_matrix((accdist, (indices[:, 0], indices[:, 1])), shape=(N, N))
     endtime = "Computational time for constructing the graph: {}".format(time.time() - starttime)
     comptime.append(endtime)
     return matrix
-
-sparse = construct_graph(indices, accdist, N)
-
-
-# Uppgift 5 - Se plot_graph
 
 
 # Uppgift 6
@@ -162,7 +123,6 @@ def dijk(sparse):
     comptime.append((endtimedijk))
     return dijk
 
-dijk = dijk(sparse)
 
 # Uppgift 7
 def compute_path(predecessor_matrix, end_node):
@@ -182,16 +142,35 @@ def compute_path(predecessor_matrix, end_node):
     return steps
 
 
+# Här körs funktionerna
+comptime = []
+starttime_tot=time.time()
+a = user_input()
+print(a)
+filename = a[0]
+radius = a[1]
+start_node = a[2]
+end_node = a[3]
+
+print(filename)
+
+coord_list = read_coordinate_file(filename)
+
+#indices, accdist = construct_graph_connections(coord_list, radius)
+
+indices, accdist = construct_fast_graph_connections(coord_list, radius)
+
+N = len(coord_list)
+
+sparse = construct_graph(indices, accdist, N)
+
+dijk = dijk(sparse)
+
 shortest_info = [compute_path(dijk[1], end_node), dijk[0][end_node]]
 # Resultatet från compute_path tillsammans med total distans = shortest_info
 print("The shortest path is: {} with a total distance of: {}".format(shortest_info[0], shortest_info[1]))
 
-# Uppgift 8
-
-
 plot_points(coord_list, indices, shortest_info[0])
-
-# Uppgift 9
 
 endtime_tot = "Computational time for the whole program: {}".format(time.time() - starttime_tot)
 comptime.append(endtime_tot)
