@@ -7,12 +7,22 @@ card3 = cl.QueenCard(cl.Suit(3))
 print(card2.card)
 print(card.card)
 
+
+
 hand = cl.Hand()
 hand.add_card(card)
 hand.add_card(card2)
 hand.add_card(card3)
 
-print(hand.cards)
+hand2 = cl.Hand().add_card(card3)
+
+x = hand.hand_give_value()
+
+deck = cl.Deck()
+deck.create_deck()
+
+deck.sort_deck()
+print(deck)
 
 #print(hand)
 #hand.sort_cards()
