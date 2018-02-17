@@ -30,14 +30,17 @@ class Rank(enum.IntEnum):
 class PlayingCard:
     def __init__(self, value, suit):
         self.card = [value, suit]
-        self.card_value = []
 
     def __str__(self):
-        return self.card[0].name + ' of ' + self.card[1].name
+        return self.give_value().name + ' of ' + self.give_suit().name
 
     def give_value(self):
-        self.card_value = [self.card[0].value, self.card[1].value]
+        self.card_value = self.card[0]
         return self.card_value
+
+    def give_suit(self):
+        self.card_suit = self.card[1]
+        return self.card_suit
 
 class NumberedCard(PlayingCard):  # The NumberedCard IS a PlayingCard
     def __init__(self, value, suit):
@@ -87,7 +90,7 @@ class Hand:
 
     def hand_give_value(self):
         for item in self.cards:
-            self.hand_value.append([item.give_value()[0], item.give_value()[1]])
+            self.hand_value.append([item.give_value().value, item.give_suit().value])
         return self.hand_value
 
 
@@ -104,7 +107,7 @@ class Deck:
 
     def create_deck(self):
         values = [10, 9, 8, 7, 6, 5, 4, 3, 2]
-        suites = [0, 1, 2, 3]
+        suites = [3, 2, 1, 0]
         for i in suites:
             self.deck_cards.append(AceCard(Suit(i)))
             self.deck_cards.append(KingCard(Suit(i)))
@@ -114,10 +117,4 @@ class Deck:
                 self.deck_cards.append(NumberedCard(Rank(k), Suit(i)))
 
     def sort_deck(self):
-        temp_deck = []
-        l = len(self.deck_cards)
-        for i in range(l):
-            rng = random.randint(0, l-i)-1
-            temp_deck.append(self.deck_cards[rng])
-            del self.deck_cards[rng]
-        self.deck_cards = temp_deck
+        random.shuffle(self.deck_cards)
