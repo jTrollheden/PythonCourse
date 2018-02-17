@@ -164,6 +164,7 @@ class PokerHand:
     #
     # def __eq__(self, other):
 
+
 # ----------------------- Deck class ------------------------------------------
 class Deck:
     def __init__(self):
@@ -175,10 +176,10 @@ class Deck:
             output = output + str(item[1]) + ', '
         return output[:-2]
 
-    def create_deck(self, num):
+    def create_deck(self):
         values = [10, 9, 8, 7, 6, 5, 4, 3, 2]
         suites = [3, 2, 1, 0]
-        for i in (suites * num):
+        for i in suites:
             self.deck_cards.append(AceCard(Suit(i)))
             self.deck_cards.append(KingCard(Suit(i)))
             self.deck_cards.append(QueenCard(Suit(i)))
@@ -215,6 +216,17 @@ def check_straight_flush(cards):
         if found_straight:
             return c.give_value()
 
+
+def check_four_kind(cards):
+    """Done"""
+    value_count = Counter()
+    for c in cards:
+        value_count[c.give_value().value] += 1
+    four_kind = [v[0] for v in value_count.items() if v[1] >= 4]
+    if len(four_kind) > 0:
+        return Rank(max(four_kind))
+
+
 def check_full_house(cards):
     """
     Checks for the best full house in a list of cards (may be more than just 5)
@@ -227,30 +239,45 @@ def check_full_house(cards):
         value_count[c.give_value().value] += 1
     # Find the card ranks that have at least three of a kind
     threes = [v[0] for v in value_count.items() if v[1] >= 3]
-    threes.sort()
-    suit_threes = []  # If more than one deck is used in the game this is needed to know the Suite
-    for c in cards:   # if both players get the same full house
-        for t in threes:
-            if t == c.give_value().value:
-                suit_threes.append(c.give_suit())
-    suit_threes.sort()
-    suit_threes.reverse()
-    suit_threes = suit_threes[:3]
+    threes.sort(reverse=True)
     # Find the card ranks that have at least a pair
     twos = [v[0] for v in value_count.items() if v[1] >= 2]
-    twos.sort()
-    suit_twos = []      # If more than one deck is used in the game this is needed to know the Suite
-    for c in cards:     # if both players get the same full house
-        for t in twos:
-            if t == c.give_value().value:
-                suit_twos.append(c.give_suit())
-    suit_twos.sort()
-    suit_twos.reverse()
-    suit_twos = suit_twos[:2]
+    twos.sort(reverse=True)
     # Threes are dominant in full house, lets check that value first:
-    for three in reversed(threes):
-        for two in reversed(twos):
+    for three in threes:
+        for two in twos:
             if two != three:
-                return [three, suit_threes], [two, suit_twos]
+                return Rank(three), Rank(two)
 
-# ----------------------- Support functions------------------------------------------
+
+def check_flush(cards):
+    """Done"""
+    value_count = Counter()
+    for c in cards:
+        value_count[c.give_suit()] += 1
+    flush = [v[0] for v in value_count.items() if v[1] >= 5]
+    if len(flush) > 0:
+        return max(flush)
+
+
+def check_straight(cards):
+    """Done"""
+    vals = [c.give_value().value for c in cards] \
+           + [1 for c in cards if c.give_value().value == 14]  # Add the aces!
+    for c in reversed(cards):  # Starting point (high card)
+        # Check if we have the value - k in the set of cards:
+        found_straight = True
+        for k in range(1, 5):
+            if (c.give_value().value - k) not in vals:
+                found_straight = False
+                break
+        if found_straight:
+            return c.give_value()
+
+# Three of a kind
+
+# Two pair
+
+# One pair
+
+# High card
