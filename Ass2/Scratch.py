@@ -1,34 +1,35 @@
 import cardlib as cl
 
-card = cl.NumberedCard(cl.Rank(6), cl.Suit(0))
-card2 = cl.AceCard(cl.Suit(0))
-card3 = cl.QueenCard(cl.Suit(2))
-card4 = cl.QueenCard(cl.Suit(3))
+deck = cl.Deck()
+deck.create_deck(1)
+#deck.shuffle_deck()
 
+card = cl.AceCard(cl.Suit(2))
+card2 = cl.AceCard(cl.Suit(1))
 
 hand = cl.Hand()
-hand.add_card(card3)
+#for i in range(5):
+#    hand.add_card(deck.draw())
+
+card3 = cl.KingCard(cl.Suit(1))
+card4 = cl.KingCard(cl.Suit(1))
+card5 = cl.KingCard(cl.Suit(1))
+card6 = cl.QueenCard(cl.Suit(1))
+card7 = cl.QueenCard(cl.Suit(1))
+card8 = cl.QueenCard(cl.Suit(1))
+
+hand.add_card(card)
 hand.add_card(card)
 hand.add_card(card2)
+hand.add_card(card3)
+hand.add_card(card4)
+hand.add_card(card5)
+hand.add_card(card6)
+hand.add_card(card7)
+hand.add_card(card8)
 
-hand2 = cl.Hand().add_card(card3)
+hand.sort_cards()
+#x = cl.check_straight_flush(hand.cards)
+x = cl.check_full_house(hand.cards)
 
-deck = cl.Deck()
-deck.create_deck()
-deck.sort_deck()
-
-hand3 = cl.Hand()
-
-
-hand.add_card(deck.draw())
-
-#print(hand)
-#hand.sort_cards()
-#print(hand)
-
-# print(card.give_value())
-# print(card2.give_value()[0].value>card.give_value()[0].value)
-# print(card2.give_value()[1].value==card.give_value()[1].value)
-#
-
-
+print(x)

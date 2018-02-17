@@ -1,6 +1,7 @@
-import enum
-import random
-import abc
+import enum  # Easier data processing (Suit and Rank)
+import random  # Rng lib
+import abc  # Abstract functions
+from collections import Counter # Counter is convenient for counting objects (a specialized dictionary)
 
 
 # ----------------------- Suit & rank Classes ------------------------------------------
@@ -21,10 +22,10 @@ class Rank(enum.IntEnum):
     Eight = 8
     Nine = 9
     Ten = 10
-    J = 11
-    Q = 12
-    K = 13
-    A = 14
+    Jack = 11
+    Queen = 12
+    King = 13
+    Ace = 14
 
 
 # ----------------------- PlayingCard class ------------------------------------------
@@ -32,8 +33,8 @@ class PlayingCard(metaclass=abc.ABCMeta):
     def __init__(self, value, suit):
         self.card = [value, suit]
 
-    #def __str__(self):
-    #    return self.give_value().name + ' of ' + self.give_suit().name
+    def __str__(self):
+        return self.give_value().name + ' of ' + self.give_suit().name
 
     def __gt__(self, other):
         if self.give_value().value > other.give_value().value:
@@ -61,7 +62,6 @@ class PlayingCard(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def give_suit(self):
         raise NotImplementedError("Missing give_suit implementation")
-
 
 
 class NumberedCard(PlayingCard):  # The NumberedCard IS a PlayingCard
@@ -145,11 +145,24 @@ class Hand:
         self.cards.append(card)
 
     def drop_card(self, ind):
-        self.cards.__delitem__(ind)
+        for item in enumerate(ind):
+            del self.cards[item[1]]
 
     def sort_cards(self):
         self.cards.sort()
 
+
+# ----------------------- Best Poker Hand class ------------------------------------------
+class PokerHand:
+    def __init__(self, kind, cards):
+        self.hand_type = kind
+        self.highest_value = cards
+
+    # def __gt__(self, other):
+    #
+    # def __lt__(self, other):
+    #
+    # def __eq__(self, other):
 
 # ----------------------- Deck class ------------------------------------------
 class Deck:
@@ -162,10 +175,10 @@ class Deck:
             output = output + str(item[1]) + ', '
         return output[:-2]
 
-    def create_deck(self):
+    def create_deck(self, num):
         values = [10, 9, 8, 7, 6, 5, 4, 3, 2]
         suites = [3, 2, 1, 0]
-        for i in suites:
+        for i in (suites * num):
             self.deck_cards.append(AceCard(Suit(i)))
             self.deck_cards.append(KingCard(Suit(i)))
             self.deck_cards.append(QueenCard(Suit(i)))
@@ -173,10 +186,71 @@ class Deck:
             for k in values:
                 self.deck_cards.append(NumberedCard(Rank(k), Suit(i)))
 
-    def sort_deck(self):
+    def shuffle_deck(self):
         random.shuffle(self.deck_cards)
 
     def draw(self):
         drawn_card = self.deck_cards[0]
         self.deck_cards.__delitem__(0)
         return drawn_card
+
+
+# ---------------- Value Checking funcs ----------------------
+def check_straight_flush(cards):
+    """
+    Checks for the best straight flush in a list of cards (may be more than just 5)
+
+    :param cards: A list of playing cards.
+    :return: None if no straight flush is found, else the value of the top card.
+    """
+    vals = [(c.give_value().value, c.give_suit().value) for c in cards] \
+        + [(1, c.give_suit().value) for c in cards if c.give_value().value == 14]  # Add the aces!
+    for c in reversed(cards):  # Starting point (high card)
+        # Check if we have the value - k in the set of cards:
+        found_straight = True
+        for k in range(1, 5):
+            if (c.give_value().value - k, c.give_suit().value) not in vals:
+                found_straight = False
+                break
+        if found_straight:
+            return c.give_value()
+
+def check_full_house(cards):
+    """
+    Checks for the best full house in a list of cards (may be more than just 5)
+
+    :param cards: A list of playing cards
+    :return: None if no full house is found, else a tuple of the values of the triple and pair.
+    """
+    value_count = Counter()
+    for c in cards:
+        value_count[c.give_value().value] += 1
+    # Find the card ranks that have at least three of a kind
+    threes = [v[0] for v in value_count.items() if v[1] >= 3]
+    threes.sort()
+    suit_threes = []  # If more than one deck is used in the game this is needed to know the Suite
+    for c in cards:   # if both players get the same full house
+        for t in threes:
+            if t == c.give_value().value:
+                suit_threes.append(c.give_suit())
+    suit_threes.sort()
+    suit_threes.reverse()
+    suit_threes = suit_threes[:3]
+    # Find the card ranks that have at least a pair
+    twos = [v[0] for v in value_count.items() if v[1] >= 2]
+    twos.sort()
+    suit_twos = []      # If more than one deck is used in the game this is needed to know the Suite
+    for c in cards:     # if both players get the same full house
+        for t in twos:
+            if t == c.give_value().value:
+                suit_twos.append(c.give_suit())
+    suit_twos.sort()
+    suit_twos.reverse()
+    suit_twos = suit_twos[:2]
+    # Threes are dominant in full house, lets check that value first:
+    for three in reversed(threes):
+        for two in reversed(twos):
+            if two != three:
+                return [three, suit_threes], [two, suit_twos]
+
+# ----------------------- Support functions------------------------------------------
