@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b58ae15-933d-409c-a621-8fcbf067daf0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Ass2/test_cardlib.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Ass2/Scratch.py" afterPath="$PROJECT_DIR$/Ass2/Scratch.py" />
+      <change beforePath="$PROJECT_DIR$/Ass2/Scratch.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Ass2/cardlib.py" afterPath="$PROJECT_DIR$/Ass2/cardlib.py" />
+      <change beforePath="$PROJECT_DIR$/Ass2/test_cardlib.py" afterPath="$PROJECT_DIR$/Ass2/test_cardlib.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,13 +16,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Scratch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ass2/Scratch.py">
+      <file leaf-file-name="test_cardlib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ass2/test_cardlib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#45#634#0" expanded="false" />
+                <element signature="e#667#1692#0" expanded="false" />
+                <element signature="e#1721#2140#0" expanded="false" />
+                <element signature="e#2174#2522#0" expanded="false" />
+                <element signature="e#2551#2886#0" expanded="false" />
+                <element signature="e#2916#3572#0" expanded="false" />
+                <element signature="e#3597#3946#0" expanded="false" />
+                <element signature="e#3974#4372#0" expanded="false" />
+                <element signature="e#4402#4818#0" expanded="false" />
+                <element signature="e#4846#5382#0" expanded="false" />
+                <element signature="e#5406#5884#0" expanded="false" />
+                <element signature="e#5913#6325#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -31,54 +42,29 @@
       <file leaf-file-name="cardlib.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ass2/cardlib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="3" column="104" lean-forward="false" selection-start-line="3" selection-start-column="104" selection-end-line="3" selection-end-column="104" />
               <folding>
-                <element signature="e#426#595#0" expanded="false" />
-                <element signature="e#935#2033#0" expanded="false" />
-                <element signature="e#2110#2371#0" expanded="false" />
-                <element signature="e#2407#2664#0" expanded="false" />
-                <element signature="e#2701#2958#0" expanded="false" />
-                <element signature="e#2994#3251#0" expanded="false" />
-                <element signature="e#3286#3543#0" expanded="false" />
-                <element signature="e#3642#5459#0" expanded="false" />
-                <element signature="e#5574#7186#0" expanded="false" />
-                <element signature="e#5622#5692#0" expanded="false" />
-                <element signature="e#7285#8142#0" expanded="false" />
-                <element signature="e#8245#9017#0" expanded="false" />
-                <element signature="e#9052#9558#0" expanded="false" />
-                <element signature="e#9594#10998#0" expanded="false" />
-                <element signature="e#11029#11555#0" expanded="false" />
-                <element signature="e#11589#12432#0" expanded="false" />
-                <element signature="e#12486#13053#0" expanded="false" />
-                <element signature="e#13098#14215#0" expanded="false" />
-                <element signature="e#14256#14767#0" expanded="false" />
-                <element signature="e#14814#15069#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_cardlib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ass2/test_cardlib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-                <element signature="e#81#364#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_cardlib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/test_cardlib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-              <folding>
-                <element signature="e#39#75#0" expanded="true" />
+                <element signature="e#338#593#0" expanded="false" />
+                <element signature="e#626#994#0" expanded="false" />
+                <element signature="e#1031#1464#0" expanded="false" />
+                <element signature="e#1600#5286#0" expanded="false" />
+                <element signature="e#5326#6634#0" expanded="false" />
+                <element signature="e#6670#7792#0" expanded="false" />
+                <element signature="e#7829#8989#0" expanded="false" />
+                <element signature="e#9025#10219#0" expanded="false" />
+                <element signature="e#10254#11450#0" expanded="false" />
+                <element signature="e#11549#15131#0" expanded="false" />
+                <element signature="e#15245#18921#0" expanded="false" />
+                <element signature="e#19020#21175#0" expanded="false" />
+                <element signature="e#21278#22065#0" expanded="false" />
+                <element signature="e#22100#23191#0" expanded="false" />
+                <element signature="e#23227#24905#0" expanded="false" />
+                <element signature="e#24936#25844#0" expanded="false" />
+                <element signature="e#25878#27087#0" expanded="false" />
+                <element signature="e#27141#28097#0" expanded="false" />
+                <element signature="e#28142#29302#0" expanded="false" />
+                <element signature="e#29343#30108#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -104,6 +90,7 @@
       <find>import</find>
       <find>suitEnum</find>
       <find>card_value</find>
+      <find>drop_card</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +120,6 @@
         <option value="$PROJECT_DIR$/Ass2/cardlib/Deck.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_7.py" />
         <option value="$PROJECT_DIR$/Ass2/cardlib/Hand.py" />
-        <option value="$PROJECT_DIR$/doc/source/index.rst" />
         <option value="$PROJECT_DIR$/Ass2/cardlib/__init__.py" />
         <option value="$PROJECT_DIR$/Ass2/clib/__init__.py" />
         <option value="$PROJECT_DIR$/Ass1/scratch.py" />
@@ -143,14 +129,16 @@
         <option value="$PROJECT_DIR$/Ass2/asd.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.py" />
         <option value="$PROJECT_DIR$/Ass2/Scratch.py" />
+        <option value="$PROJECT_DIR$/doc/source/index.rst" />
+        <option value="$PROJECT_DIR$/test_cardlib.py" />
+        <option value="$PROJECT_DIR$/source/index.rst" />
         <option value="$PROJECT_DIR$/Ass2/test_cardlib.py" />
         <option value="$PROJECT_DIR$/Ass2/cardlib.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -172,6 +160,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,8 +178,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,14 +185,16 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Ass2" />
-      <recent name="$PROJECT_DIR$/Ass2/clib" />
-      <recent name="$PROJECT_DIR$/Lectures" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Ass1" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Ass2" />
+      <recent name="$PROJECT_DIR$/Ass2/.cache" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Ass2/clib" />
+      <recent name="$PROJECT_DIR$/Lectures" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -219,43 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Scratch">
-    <configuration name="Scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PythonCourse" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass2/Scratch.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass2/cardlib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PythonCourse" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass2/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.cardlib">
     <configuration name="cardlib" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -292,7 +246,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Assignment 2" type="docs" factoryName="Sphinx task">
+    <configuration name="Ass2" type="docs" factoryName="Sphinx task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -302,8 +256,8 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PythonCourse" />
-      <option name="docutils_input_file" value="$PROJECT_DIR$/doc/source" />
-      <option name="docutils_output_file" value="$PROJECT_DIR$/doc/build" />
+      <option name="docutils_input_file" value="$PROJECT_DIR$/source" />
+      <option name="docutils_output_file" value="$PROJECT_DIR$/build" />
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="html" />
       <option name="docutils_open_in_browser" value="false" />
@@ -323,21 +277,17 @@
       <option name="_new_target" value="&quot;$PROJECT_DIR$/Ass2&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Python docs.Assignment 2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Scratch" />
-      <item index="3" class="java.lang.String" itemvalue="Python.cardlib" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_cardlib" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.py.test in Ass2" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python docs.Ass2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.cardlib" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_cardlib" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in Ass2" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Scratch" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in Ass2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_cardlib" />
-        <item index="3" class="java.lang.String" itemvalue="Python.cardlib" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Test" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.cardlib" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_cardlib" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in Ass2" />
       </list>
     </recent_temporary>
   </component>
@@ -378,18 +328,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5137421" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32806325" sideWeight="0.48625794" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.4918957" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.48625794" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.4918957" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3992095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -434,14 +384,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scratch.py" />
-    <entry file="file://$PROJECT_DIR$/SampleCoordinates.txt" />
-    <entry file="file://$PROJECT_DIR$/scratch.py" />
     <entry file="file://$PROJECT_DIR$/SampleCoordinates.txt" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Assignment1.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
@@ -574,7 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/source/index.rst" />
     <entry file="file://$PROJECT_DIR$/Ass2/cardlib/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Ass2/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Ass2/clib/__init__.py" />
@@ -601,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="811" column="8" lean-forward="false" selection-start-line="811" selection-start-column="8" selection-end-line="811" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -616,66 +561,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/test_cardlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="227">
           <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding>
-            <element signature="e#39#75#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass2/Scratch.py">
+    <entry file="file://$PROJECT_DIR$/Ass2/Scratch.py" />
+    <entry file="file://$PROJECT_DIR$/doc/build/index.html" />
+    <entry file="file://$PROJECT_DIR$/doc/source/index.rst" />
+    <entry file="file://$PROJECT_DIR$/source/index.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass2/test_cardlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#81#364#0" expanded="false" />
+            <element signature="e#45#634#0" expanded="false" />
+            <element signature="e#667#1692#0" expanded="false" />
+            <element signature="e#1721#2140#0" expanded="false" />
+            <element signature="e#2174#2522#0" expanded="false" />
+            <element signature="e#2551#2886#0" expanded="false" />
+            <element signature="e#2916#3572#0" expanded="false" />
+            <element signature="e#3597#3946#0" expanded="false" />
+            <element signature="e#3974#4372#0" expanded="false" />
+            <element signature="e#4402#4818#0" expanded="false" />
+            <element signature="e#4846#5382#0" expanded="false" />
+            <element signature="e#5406#5884#0" expanded="false" />
+            <element signature="e#5913#6325#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Ass2/cardlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11378">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass2/cardlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="3" column="104" lean-forward="false" selection-start-line="3" selection-start-column="104" selection-end-line="3" selection-end-column="104" />
           <folding>
-            <element signature="e#426#595#0" expanded="false" />
-            <element signature="e#935#2033#0" expanded="false" />
-            <element signature="e#2110#2371#0" expanded="false" />
-            <element signature="e#2407#2664#0" expanded="false" />
-            <element signature="e#2701#2958#0" expanded="false" />
-            <element signature="e#2994#3251#0" expanded="false" />
-            <element signature="e#3286#3543#0" expanded="false" />
-            <element signature="e#3642#5459#0" expanded="false" />
-            <element signature="e#5574#7186#0" expanded="false" />
-            <element signature="e#5622#5692#0" expanded="false" />
-            <element signature="e#7285#8142#0" expanded="false" />
-            <element signature="e#8245#9017#0" expanded="false" />
-            <element signature="e#9052#9558#0" expanded="false" />
-            <element signature="e#9594#10998#0" expanded="false" />
-            <element signature="e#11029#11555#0" expanded="false" />
-            <element signature="e#11589#12432#0" expanded="false" />
-            <element signature="e#12486#13053#0" expanded="false" />
-            <element signature="e#13098#14215#0" expanded="false" />
-            <element signature="e#14256#14767#0" expanded="false" />
-            <element signature="e#14814#15069#0" expanded="false" />
+            <element signature="e#338#593#0" expanded="false" />
+            <element signature="e#626#994#0" expanded="false" />
+            <element signature="e#1031#1464#0" expanded="false" />
+            <element signature="e#1600#5286#0" expanded="false" />
+            <element signature="e#5326#6634#0" expanded="false" />
+            <element signature="e#6670#7792#0" expanded="false" />
+            <element signature="e#7829#8989#0" expanded="false" />
+            <element signature="e#9025#10219#0" expanded="false" />
+            <element signature="e#10254#11450#0" expanded="false" />
+            <element signature="e#11549#15131#0" expanded="false" />
+            <element signature="e#15245#18921#0" expanded="false" />
+            <element signature="e#19020#21175#0" expanded="false" />
+            <element signature="e#21278#22065#0" expanded="false" />
+            <element signature="e#22100#23191#0" expanded="false" />
+            <element signature="e#23227#24905#0" expanded="false" />
+            <element signature="e#24936#25844#0" expanded="false" />
+            <element signature="e#25878#27087#0" expanded="false" />
+            <element signature="e#27141#28097#0" expanded="false" />
+            <element signature="e#28142#29302#0" expanded="false" />
+            <element signature="e#29343#30108#0" expanded="false" />
           </folding>
         </state>
       </provider>
