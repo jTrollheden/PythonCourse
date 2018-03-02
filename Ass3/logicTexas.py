@@ -127,6 +127,7 @@ class CenterCards(cl.Hand, GameState):
 
 # TODO: Lägg in execute i GameState. Behöver ha looparna där inne om nya kort ska genereras.
 # TODO: Player och centercard can kombineras och initieras i GameState ist.
+# TODO: Fixa Gameview()GameState() i pokergame
 def execute():
     deck = Deck()
     deck.create_deck()

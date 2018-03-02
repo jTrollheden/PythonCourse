@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b58ae15-933d-409c-a621-8fcbf067daf0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Ass3/GUIdrawer.py" afterPath="$PROJECT_DIR$/Ass3/GUIdrawer.py" />
       <change beforePath="$PROJECT_DIR$/Ass3/logicTexas.py" afterPath="$PROJECT_DIR$/Ass3/logicTexas.py" />
+      <change beforePath="$PROJECT_DIR$/Ass3/pokergame.py" afterPath="$PROJECT_DIR$/Ass3/pokergame.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +16,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.43985307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="logicTexas.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="logicTexas.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="678">
-                  <caret line="127" column="50" lean-forward="false" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
+                <state relative-caret-position="344">
+                  <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="46" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -28,11 +28,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="pokergame.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="pokergame.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="48" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -65,8 +65,8 @@
           <file leaf-file-name="GUIdrawer.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="175">
-                  <caret line="216" column="19" lean-forward="true" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+                <state relative-caret-position="265">
+                  <caret line="222" column="21" lean-forward="true" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                     <element signature="e#229#373#0" expanded="false" />
@@ -79,7 +79,7 @@
           <file leaf-file-name="aTestSpelMedSpelare.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-145">
+                <state relative-caret-position="1470">
                   <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
                   <folding />
                 </state>
@@ -227,13 +227,13 @@
         <option value="$PROJECT_DIR$/Ass3/Test/pokergame.py" />
         <option value="$PROJECT_DIR$/Ass3/cardlib.py" />
         <option value="$PROJECT_DIR$/Ass3/card_view.py" />
-        <option value="$PROJECT_DIR$/Ass3/pokergame.py" />
         <option value="$PROJECT_DIR$/Ass3/GUIdrawer.py" />
         <option value="$PROJECT_DIR$/Ass3/logicTexas.py" />
+        <option value="$PROJECT_DIR$/Ass3/pokergame.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -255,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,7 +273,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,6 +468,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23255815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -780,26 +781,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
+        <state relative-caret-position="1470">
           <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
+    <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="48" />
+        <state relative-caret-position="344">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="46" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="216" column="19" lean-forward="true" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+        <state relative-caret-position="265">
+          <caret line="222" column="21" lean-forward="true" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#229#373#0" expanded="false" />
@@ -808,12 +809,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
+    <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="127" column="50" lean-forward="false" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
+        <state relative-caret-position="105">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
