@@ -1,72 +1,12 @@
-#from PySide.QtCore import *
-#from PySide.QtGui import *
-#from PySide.QtSvg import *
-#from PyQt4.QtCore import *
-#from PyQt4.QtGui import *
-#from PyQt4.QtSvg import *
-from PyQt5.QtCore import *
-import cardlib as cl
 from PyQt5.QtGui import *
 from PyQt5.QtSvg import *
 from PyQt5.QtWidgets import *
+import logicTexas as tx
 import sys
+
 
 qt_app = QApplication(sys.argv)
 qt_app = QApplication.instance()
-
-class CommonResources:  # KOMMER BLI GAME KLASSEN
-    def __init__(self):
-        self.cards = ['QS', 'AD', '5D', '6C', '3H']
-        self.marked_cards = [False]*len(self.cards)
-        self.pot = 10000
-        self.folded = False
-        self.cb = None
-        self.usrname = "Sofia"
-
-    def set_callback(self, cb):
-        # Instead of the sophisticated signal system, I have a simple callback here.
-        # This only works if there is just one viewer!
-        # But I want to reduce the complexity in this example to make it clear why things occur.
-        self.cb = cb
-
-    def active(self):
-        return credits > 0 and not self.folded
-
-    def mark_position(self, i):
-        # Mark the card as position "i" to be thrown away
-        self.marked_cards[i] = not self.marked_cards[i]
-        if self.cb is not None: self.cb()
-
-    def marked(self, id):
-        return self.marked_cards[id]
-
-
-class Player:  # ÄR TILLSAMMANS MED GAME KLASSEN I EN ANNAN FIL
-    def __init__(self):
-        # Lets use some hardcoded values for most of this to start with:
-        self.cards = ['QS', 'AD']
-        self.marked_cards = [False]*len(self.cards)
-        self.credits = 100
-        self.folded = False
-        self.cb = None
-        self.usrname = "Sofia"
-
-    def set_callback(self, cb):
-        # Instead of the sophisticated signal system, I have a simple callback here.
-        # This only works if there is just one viewer!
-        # But I want to reduce the complexity in this example to make it clear why things occur.
-        self.cb = cb
-
-    def active(self):
-        return credits > 0 and not self.folded
-
-    def mark_position(self, i):
-        # Mark the card as position "i" to be thrown away
-        self.marked_cards[i] = not self.marked_cards[i]
-        if self.cb is not None: self.cb()
-
-    def marked(self, id):
-        return self.marked_cards[id]
 
 
 class TableBackground(QGraphicsScene):
@@ -125,7 +65,7 @@ class CardView(QGraphicsView):
         # The view can listen to changes:
         active_instance.data_changed.connect(self.change_cards)
         # It is completely optional if you want to do it this way, or have some overreaching Player/GameState
-        # call the "change_cards" method instead. z
+        # call the "change_cards" method instead.
 
         # Add the cards the first time around to represent the initial state.
         self.change_cards()
@@ -134,8 +74,8 @@ class CardView(QGraphicsView):
         # Add the cards from scratch:
         self.scene.clear()  # Removes old cards
         for i, card in enumerate(self.active_instance.cards):  # Player/center cards goes here
-            graphics_key = (card.value, card.suit)
-            renderer = self.back_card if self.model.flipped(i) else self.all_cards[graphics_key]
+            graphics_key = (card.give_value().value, card.give_suit().value)
+            renderer = self.all_cards[graphics_key] #self.back_card if self.model.flipped(i) else
             # TODO: När ska korten vara flippade?
             c = CardSvgItem(renderer, i)
 
@@ -147,36 +87,24 @@ class CardView(QGraphicsView):
 
             # Position cards
             c.setPos(c.position * self.card_spacing, 0)
-
+            # Sets the opacity of cards if they are marked.
             self.scene.addItem(c)
 
         self.update_view()
 
     def update_view(self):
-        for c in self.scene.items():
-            # Lets have the cards take up almost the (current) full height
-            card_height = c.boundingRect().bottom()
-            scale = (self.height()-2*self.padding)/(card_height)
-
-            c.setPos(c.position * self.card_spacing*scale, 0)
-            c.setScale(scale)
-            #c.setOpacity(0.5 if self.active_instance.marked_cards[c.position] else 1.0)
-
+        scale = (self.viewport().height() - 2 * self.padding) / 313
+        self.resetTransform()
+        self.scale(scale, scale)
         # Put the scene bounding box
-        self.scene.setSceneRect(-self.padding, -self.padding, self.viewport().width(), self.viewport().height())
+        self.setSceneRect(-self.padding // scale, -self.padding // scale,
+                          self.viewport().width() // scale, self.viewport().height() // scale)
 
     def resizeEvent(self, painter):
         # If the widget is resize, we gotta adjust the card sizes.
         # QGraphicsView automatically re-paints everything when we modify the scene.
         self.update_view()
         super().resizeEvent(painter)
-
-    # This is the Controller part of the GUI, handling input events that modify the Model
-    def mousePressEvent(self, event):  # Not sure what this will be used for since the game -> driven by buttons
-        item = self.scene.itemAt(event.pos(), self.transform())
-        if item is not None:
-            # Report back that the Model that the user marked a given position:
-            self.active_instance.mark_position(item.position)
 
 
 class PlayerView(QGroupBox):
@@ -195,29 +123,33 @@ class PlayerView(QGroupBox):
         self.cards = CardView(self.player)
         layout.addWidget(self.cards)
 
+        player.data_changed.connect(self.update)
+
         self.update()
 
     def update(self):
         self.who_money.setText("Player: " + str(self.player.usrname) + " has " + str(self.player.credits) + "kr")
 
-
 class GameView(QGroupBox):
-    def __init__(self, common_resources):
+    def __init__(self, center_cards, player1, player2):
         super().__init__()
-        self.cresources = common_resources
+        self.center_cards = center_cards
 
         layout = QVBoxLayout()
         self.setLayout(layout)
 
-        self.cards = CardView(self.cresources)
+        self.cards = CardView(self.center_cards)
 
 
-        player_view = PlayerView(Player())
-        player_view2 = PlayerView(Player())
+        player_view = PlayerView(player1)
+        player_view2 = PlayerView(player2)
 
         layout.addWidget(player_view)
         layout.addWidget(self.cards)
         layout.addWidget(player_view2)
+
+        player1.data_changed.connect(self.update)
+        player2.data_changed.connect(self.update)
 
         self.setStyleSheet("""
             color: white; 
@@ -226,7 +158,7 @@ class GameView(QGroupBox):
 
 
 class InteractionBox(QGroupBox):
-    def __init__(self, CommonResources):
+    def __init__(self, game_state):
         super().__init__()
 
         # Layout
@@ -234,7 +166,7 @@ class InteractionBox(QGroupBox):
         vbox = QVBoxLayout()
         vbox.addLayout(hbox)
         self.setLayout(vbox)
-        self.cresources = CommonResources
+        self.game_state = game_state
 
         # Buttons
         bet_raiseb = QPushButton("Bet/Raise")  # Ändra så att texten beror på state
@@ -245,9 +177,28 @@ class InteractionBox(QGroupBox):
         self.buttons_game = [bet_raiseb, call_checkb, foldb]
         self.buttons_status = [new_gameb, stop_playingb]
 
+        game_state.data_changed.connect(self.update)
+
         def bet_raise():
-            1+1
-            # Add money to the pot (GameState)
+            if game_state.bet:
+                cred = QInputDialog.getInt(self, "Raise", ("How much do you want to raise the old bet? The old bet was:"
+                                                           + str(game_state.old_bet)))
+                if cred[1] and cred[0] > 0:
+                    state = game_state.players[1].raise_pot(cred[0], game_state)
+                    game_state.update_pot(cred[0]+game_state.old_bet)
+                else:
+                    pass
+            else:
+                cred = QInputDialog.getInt(self, "Bet", "How much do you want to bet?")
+                if cred and cred[0] > 0:
+                    state = game_state.players[1].bet(cred[0], game_state)
+                    if state:
+                        game_state.update_pot(cred[0])
+                    else:
+                        QMessageBox.question(self, "", "You do not have enough credits",
+                                             QMessageBox.Ok)
+                else:
+                    pass
 
         def check_call():
             1+1
@@ -291,21 +242,31 @@ class InteractionBox(QGroupBox):
         self.setMaximumHeight(self.sizeHint().height())
 
     def update(self):
-        self.turn.setText("Turn: Player " + str(1))  # status of game
-        self.pot.setText("The total pot is: " + str(self.cresources.pot) + "kr")  # status of game
+        if game_state.player_turn == 0:
+            self.turn.setText("Game has not started")  # status of game
+        else:
+            self.turn.setText("Turn: Player " + str(self.game_state.player_turn))  # status of game
+        self.pot.setText("The total pot is: " + str(self.game_state.pot) + "kr")  # status of game
 
 
-intbox = InteractionBox(CommonResources())
-game_view = GameView(CommonResources())
+[game_state, centercards, player1, player2] = tx.execute()
 
-superlayout = QHBoxLayout()
-superlayout.addWidget(game_view)
-superlayout.addWidget(intbox)
 
-window_view = QGroupBox()
-window_view.setLayout(superlayout)
-window_view.setMaximumSize(window_view.sizeHint())
+def execute(game_state, centercards, player1, player2):
+    intbox = InteractionBox(game_state)
+    game_view = GameView(centercards, player1, player2)
 
-window_view.show()
+    superlayout = QHBoxLayout()
+    superlayout.addWidget(game_view)
+    superlayout.addWidget(intbox)
 
-qt_app.exec()
+    window_view = QGroupBox()
+    window_view.setLayout(superlayout)
+    window_view.setMaximumSize(window_view.sizeHint())
+
+    window_view.show()
+
+    qt_app.exec()
+
+
+execute(game_state, centercards, player1, player2)

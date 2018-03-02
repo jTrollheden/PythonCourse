@@ -520,7 +520,7 @@ class Deck:
         """
                 Creates the deck upon calling upon the Class Deck.
                 """
-        self.deck_cards = []  # Creates the deck object adds an empty list that you can add cards to.
+        self.cards = []  # Creates the deck object adds an empty list that you can add cards to.
 
     def __str__(self):
         """
@@ -530,7 +530,7 @@ class Deck:
                 :return: A string that represents the deck.
         """
         output = ''
-        for item in enumerate(self.deck_cards):
+        for item in enumerate(self.cards):
             output = output + str(item[1]) + ', '
         return output[:-2]  # Formating the string output of a deck so it's readable to the user
 
@@ -544,12 +544,12 @@ class Deck:
         suites = [3, 2, 1, 0]
         # Creates all the 13 cards for each suit
         for i in suites:
-            self.deck_cards.append(AceCard(Suit(i)))
-            self.deck_cards.append(KingCard(Suit(i)))
-            self.deck_cards.append(QueenCard(Suit(i)))
-            self.deck_cards.append(JackCard(Suit(i)))
+            self.cards.append(AceCard(Suit(i)))
+            self.cards.append(KingCard(Suit(i)))
+            self.cards.append(QueenCard(Suit(i)))
+            self.cards.append(JackCard(Suit(i)))
             for k in values:
-                self.deck_cards.append(NumberedCard(Rank(k), Suit(i)))
+                self.cards.append(NumberedCard(Rank(k), Suit(i)))
 
     def shuffle_deck(self):
         """
@@ -557,7 +557,7 @@ class Deck:
 
                 :param self: The deck you want to shuffle.
         """
-        random.shuffle(self.deck_cards)  # Shuffles the deck
+        random.shuffle(self.cards)  # Shuffles the deck
 
     def draw(self):
         """
@@ -566,8 +566,8 @@ class Deck:
                 :param self: The deck you want to draw a card from.
                 :return card: The card drawn.
                 """
-        drawn_card = self.deck_cards[0]
-        self.deck_cards.__delitem__(0)
+        drawn_card = self.cards[0]
+        self.cards.__delitem__(0)
         return drawn_card
         # removes a card and returns the drawn card so that the function add_card for the hand can use it while at the
         # same time be able to be discarded straight from the deck.

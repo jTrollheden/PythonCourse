@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b58ae15-933d-409c-a621-8fcbf067daf0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Ass3/logicTexas.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Ass3/pokergame.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Ass3/GUIdrawer.py" afterPath="$PROJECT_DIR$/Ass3/GUIdrawer.py" />
       <change beforePath="$PROJECT_DIR$/Ass3/card_view.py" afterPath="$PROJECT_DIR$/Ass3/card_view.py" />
+      <change beforePath="$PROJECT_DIR$/Ass3/cardlib.py" afterPath="$PROJECT_DIR$/Ass3/cardlib.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,94 +17,117 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.70542634">
+    <splitter split-orientation="horizontal" split-proportion="0.43985307">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.53580564">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="basicGUIdrawer.py" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="180">
-                      <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-                      <folding>
-                        <element signature="e#409#1253#0" expanded="false" />
-                        <element signature="e#1324#2225#0" expanded="false" />
-                        <element signature="e#2271#2415#0" expanded="false" />
-                        <element signature="e#5706#6236#0" expanded="false" />
-                        <element signature="e#6270#6874#0" expanded="false" />
-                        <element signature="e#6914#9081#0" expanded="false" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="GUIdrawer.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="78">
-                      <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-                      <folding>
-                        <element signature="e#429#1273#0" expanded="false" />
-                        <element signature="e#1344#2245#0" expanded="false" />
-                        <element signature="e#7024#7554#0" expanded="false" />
-                        <element signature="e#7588#8192#0" expanded="false" />
-                        <element signature="e#8232#10399#0" expanded="false" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="card_view.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Ass3/card_view.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-                      <folding>
-                        <element signature="e#167#193#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="cardlib.py" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/Ass3/cardlib.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="30">
-                      <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="card_view.py" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/Ass3/card_view.py">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="58">
-                      <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-                      <folding>
-                        <element signature="e#167#193#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="logicTexas.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="271">
+                  <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pokergame.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#0#28#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="basicGUIdrawer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="495">
+                  <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#409#1253#0" expanded="false" />
+                    <element signature="e#1324#2225#0" expanded="false" />
+                    <element signature="e#2271#2415#0" expanded="false" />
+                    <element signature="e#2459#2587#0" expanded="false" />
+                    <element signature="e#2625#5670#0" expanded="false" />
+                    <element signature="e#5706#6236#0" expanded="false" />
+                    <element signature="e#6914#9081#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="cardlib.py" pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="GUIdrawer.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="325">
+                  <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#229#373#0" expanded="false" />
+                    <element signature="e#417#545#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="aTestSpelMedSpelare.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1755">
+                  <caret line="121" column="34" lean-forward="false" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="card_view.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Ass3/card_view.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="585">
+                  <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#167#193#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="cardlib.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Ass3/cardlib.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-                  <folding />
+                <state relative-caret-position="210">
+                  <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#338#593#0" expanded="false" />
+                    <element signature="e#626#994#0" expanded="false" />
+                    <element signature="e#1031#1464#0" expanded="false" />
+                    <element signature="e#1600#5286#0" expanded="false" />
+                    <element signature="e#6670#7792#0" expanded="false" />
+                    <element signature="e#7829#8989#0" expanded="false" />
+                    <element signature="e#9025#10219#0" expanded="false" />
+                    <element signature="e#10254#11450#0" expanded="false" />
+                    <element signature="e#11549#15131#0" expanded="false" />
+                    <element signature="e#15245#18921#0" expanded="false" />
+                    <element signature="e#21228#22015#0" expanded="false" />
+                    <element signature="e#22050#23141#0" expanded="false" />
+                    <element signature="e#23177#24855#0" expanded="false" />
+                    <element signature="e#24886#25794#0" expanded="false" />
+                    <element signature="e#25828#27037#0" expanded="false" />
+                    <element signature="e#27091#28047#0" expanded="false" />
+                    <element signature="e#28092#29252#0" expanded="false" />
+                    <element signature="e#29293#30058#0" expanded="false" />
+                    <element signature="e#30105#30595#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -118,17 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scipy</find>
-      <find>num_lines</find>
-      <find>construct_graph</find>
-      <find>construct_graph_connections</find>
-      <find>print</find>
-      <find>p</find>
-      <find>import</find>
-      <find>suitEnum</find>
-      <find>card_value</find>
-      <find>drop_card</find>
-      <find>PlayerView</find>
       <find>label</find>
       <find>tablescene</find>
       <find>SizePol</find>
@@ -147,6 +163,18 @@
       <find>self.cards_model</find>
       <find>Hand</find>
       <find>c_ref</find>
+      <find>changed</find>
+      <find>marked</find>
+      <find>marked(</find>
+      <find>game_message</find>
+      <find>deck_cards</find>
+      <find>common</find>
+      <find>cresources</find>
+      <find>cresou</find>
+      <find>renderer = sel</find>
+      <find>self.back_card</find>
+      <find>button</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,11 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_7.py" />
-        <option value="$PROJECT_DIR$/Ass2/cardlib/Hand.py" />
-        <option value="$PROJECT_DIR$/Ass2/cardlib/__init__.py" />
-        <option value="$PROJECT_DIR$/Ass2/clib/__init__.py" />
-        <option value="$PROJECT_DIR$/Ass2/Cards.py" />
         <option value="$PROJECT_DIR$/Ass2/Test.py" />
         <option value="$PROJECT_DIR$/Ass2/Cardlib.py" />
         <option value="$PROJECT_DIR$/Ass2/asd.py" />
@@ -192,7 +215,6 @@
         <option value="$PROJECT_DIR$/Ass3/Test/TestSimpelLayout.py" />
         <option value="$PROJECT_DIR$/Ass3/Test/TestKnappKallarFunktion.py" />
         <option value="$PROJECT_DIR$/Ass3/Test/Test10.py" />
-        <option value="$PROJECT_DIR$/Ass3/pokergame.py" />
         <option value="$PROJECT_DIR$/Ass3/Test/asd.py" />
         <option value="$PROJECT_DIR$/Ass3/Testkoder/asd.py" />
         <option value="$PROJECT_DIR$/Ass3/Testkoder/asdasd.py" />
@@ -204,12 +226,18 @@
         <option value="$PROJECT_DIR$/Ass3/Test/aTestPrintaHand.py" />
         <option value="$PROJECT_DIR$/Ass3/interactionwindow.py" />
         <option value="$PROJECT_DIR$/Ass3/basicGUIdrawer.py" />
+        <option value="$PROJECT_DIR$/Ass3/GameLogic.py" />
+        <option value="$PROJECT_DIR$/Ass3/GameLogicTexas.py" />
+        <option value="$PROJECT_DIR$/Ass3/Test/pokergame.py" />
+        <option value="$PROJECT_DIR$/Ass3/cardlib.py" />
         <option value="$PROJECT_DIR$/Ass3/card_view.py" />
+        <option value="$PROJECT_DIR$/Ass3/logicTexas.py" />
         <option value="$PROJECT_DIR$/Ass3/GUIdrawer.py" />
+        <option value="$PROJECT_DIR$/Ass3/pokergame.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -231,7 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,17 +269,13 @@
             <path>
               <item name="PythonCourse" type="b2602c69:ProjectViewProjectNode" />
               <item name="PythonCourse" type="462c0819:PsiDirectoryNode" />
-              <item name="Ass2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PythonCourse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PythonCourse" type="462c0819:PsiDirectoryNode" />
               <item name="Ass3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -286,7 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.interactionwindow">
+  <component name="RunManager" selected="Python.pokergame">
     <configuration name="GUIdrawer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -305,37 +328,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="aTestPrintaHand" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="GameLogic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass3/Test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PythonCourse" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass3/Test/aTestPrintaHand.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="aTestSpelMedSpelare" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass3/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PythonCourse" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass3/logicTexas.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -377,6 +382,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="pokergame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ass3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PythonCourse" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ass3/pokergame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Ass2" type="docs" factoryName="Sphinx task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -395,19 +418,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python docs.Ass2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.aTestSpelMedSpelare" />
-      <item index="2" class="java.lang.String" itemvalue="Python.aTestPrintaHand" />
-      <item index="3" class="java.lang.String" itemvalue="Python.interactionwindow" />
-      <item index="4" class="java.lang.String" itemvalue="Python.card_view" />
-      <item index="5" class="java.lang.String" itemvalue="Python.GUIdrawer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.interactionwindow" />
+      <item index="2" class="java.lang.String" itemvalue="Python.card_view" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GUIdrawer" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GameLogic" />
+      <item index="5" class="java.lang.String" itemvalue="Python.pokergame" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.interactionwindow" />
+        <item index="0" class="java.lang.String" itemvalue="Python.pokergame" />
         <item index="1" class="java.lang.String" itemvalue="Python.GUIdrawer" />
-        <item index="2" class="java.lang.String" itemvalue="Python.card_view" />
-        <item index="3" class="java.lang.String" itemvalue="Python.aTestPrintaHand" />
-        <item index="4" class="java.lang.String" itemvalue="Python.aTestSpelMedSpelare" />
+        <item index="2" class="java.lang.String" itemvalue="Python.GameLogic" />
+        <item index="3" class="java.lang.String" itemvalue="Python.interactionwindow" />
+        <item index="4" class="java.lang.String" itemvalue="Python.card_view" />
       </list>
     </recent_temporary>
   </component>
@@ -451,7 +474,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23255815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23255815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5137421" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36445013" sideWeight="0.48625794" order="2" side_tool="false" content_ui="tabs" />
@@ -459,7 +482,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32674572" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39789197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39769822" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -485,25 +508,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="64" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2017.3/python_stubs/-1909231334/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="811" column="8" lean-forward="false" selection-start-line="811" selection-start-column="8" selection-end-line="811" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_9.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/full_house_straight_flush.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -595,13 +604,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/Test4.py" />
-    <entry file="file://$PROJECT_DIR$/Ass1/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/cards/2C.svg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -709,17 +711,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py" />
     <entry file="file://$PROJECT_DIR$/Ass3/Testkoder/Tutorial.py" />
     <entry file="file://$PROJECT_DIR$/Ass3/Sofiaskod_clean.py" />
     <entry file="file://$PROJECT_DIR$/Ass3/Test.py" />
-    <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestPrintaHand.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -727,49 +721,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/cardlib.py">
+    <entry file="file://$PROJECT_DIR$/Ass3/Test/pokergame.py" />
+    <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="495">
+          <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="23" />
+          <folding>
+            <element signature="e#409#1253#0" expanded="false" />
+            <element signature="e#1324#2225#0" expanded="false" />
+            <element signature="e#2271#2415#0" expanded="false" />
+            <element signature="e#2459#2587#0" expanded="false" />
+            <element signature="e#2625#5670#0" expanded="false" />
+            <element signature="e#5706#6236#0" expanded="false" />
+            <element signature="e#6914#9081#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
+    <entry file="file://$PROJECT_DIR$/Ass1/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding>
-            <element signature="e#429#1273#0" expanded="false" />
-            <element signature="e#1344#2245#0" expanded="false" />
-            <element signature="e#7024#7554#0" expanded="false" />
-            <element signature="e#7588#8192#0" expanded="false" />
-            <element signature="e#8232#10399#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ass3/Test/aTestSpelMedSpelare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="121" column="34" lean-forward="false" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/card_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        <state relative-caret-position="585">
+          <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
           <folding>
             <element signature="e#167#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
+    <entry file="file://$PROJECT_DIR$/Ass3/cardlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="210">
+          <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
           <folding>
-            <element signature="e#409#1253#0" expanded="false" />
-            <element signature="e#1324#2225#0" expanded="false" />
-            <element signature="e#2271#2415#0" expanded="false" />
-            <element signature="e#5706#6236#0" expanded="false" />
-            <element signature="e#6270#6874#0" expanded="false" />
-            <element signature="e#6914#9081#0" expanded="false" />
+            <element signature="e#338#593#0" expanded="false" />
+            <element signature="e#626#994#0" expanded="false" />
+            <element signature="e#1031#1464#0" expanded="false" />
+            <element signature="e#1600#5286#0" expanded="false" />
+            <element signature="e#6670#7792#0" expanded="false" />
+            <element signature="e#7829#8989#0" expanded="false" />
+            <element signature="e#9025#10219#0" expanded="false" />
+            <element signature="e#10254#11450#0" expanded="false" />
+            <element signature="e#11549#15131#0" expanded="false" />
+            <element signature="e#15245#18921#0" expanded="false" />
+            <element signature="e#21228#22015#0" expanded="false" />
+            <element signature="e#22050#23141#0" expanded="false" />
+            <element signature="e#23177#24855#0" expanded="false" />
+            <element signature="e#24886#25794#0" expanded="false" />
+            <element signature="e#25828#27037#0" expanded="false" />
+            <element signature="e#27091#28047#0" expanded="false" />
+            <element signature="e#28092#29252#0" expanded="false" />
+            <element signature="e#29293#30058#0" expanded="false" />
+            <element signature="e#30105#30595#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#229#373#0" expanded="false" />
+            <element signature="e#417#545#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
