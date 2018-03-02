@@ -85,16 +85,17 @@ class CardSvgItem(QGraphicsSvgItem):
 
 class CardView(QGraphicsView):
     # Underscores indicate a private function!
-    def __read_cards(): # Ignore the PyCharm warning on this line. It's correct.
+    def __read_cards():  # Ignore the PyCharm warning on this line. It's correct.
         """
         Reads all the 52 cards from files.
         :return: Dictionary of SVG renderers
         """
-        all_cards = dict()
-        for suit in 'HDSC':
-            for value in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
-                file = value + suit
-                all_cards[file] = QSvgRenderer('cards/' + file + '.svg')
+        all_cards = dict()  # Dictionaries let us have convenient mappings between cards and their images
+        for suit_file, suit in zip('HDSC', range(4)): # Check the order of the suits here!!!
+            for value_file, value in zip(['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'], range(2, 15)):
+                file = value_file + suit_file
+                key = (value, suit)  # I'm choosing this tuple to be the key for this dictionary
+                all_cards[key] = QSvgRenderer('cards/' + file + '.svg')
         return all_cards
 
     # We read all the card graphics as static class variables:
@@ -102,6 +103,13 @@ class CardView(QGraphicsView):
     all_cards = __read_cards()
 
     def __init__(self, active_instance, card_spacing=250, padding=10):
+        """
+        Initializes the view to display the content of the given model
+        :param cards_model: A model that represents a set of cards.
+        The model should have: data_changed, cards, clicked_position, flipped,
+        :param card_spacing: Spacing between the visualized cards.
+        :param padding: Padding of table area around the visualized cards.
+        """
 
         self.scene = TableBackground()
         super().__init__(self.scene)
@@ -110,16 +118,25 @@ class CardView(QGraphicsView):
 
         self.card_spacing = card_spacing
         self.padding = padding
-
         self.active_instance = active_instance
-        active_instance.set_callback(self.change_cards)
+
+        # Whenever the this window should update, it should call the "change_cards" method.
+        # This can, for example, be done by connecting it to a signal.
+        # The view can listen to changes:
+        active_instance.data_changed.connect(self.change_cards)
+        # It is completely optional if you want to do it this way, or have some overreaching Player/GameState
+        # call the "change_cards" method instead. z
+
+        # Add the cards the first time around to represent the initial state.
         self.change_cards()
 
     def change_cards(self):  # Fix so that the
         # Add the cards from scratch:
         self.scene.clear()  # Removes old cards
-        for i, c_ref in enumerate(self.active_instance.cards):  # Player/center cards goes here
-            renderer = self.back_card if self.active_instance.marked_cards[i] else self.all_cards[c_ref]
+        for i, card in enumerate(self.active_instance.cards):  # Player/center cards goes here
+            graphics_key = (card.value, card.suit)
+            renderer = self.back_card if self.model.flipped(i) else self.all_cards[graphics_key]
+            # TODO: När ska korten vara flippade?
             c = CardSvgItem(renderer, i)
 
             shadow = QGraphicsDropShadowEffect(c)
@@ -127,6 +144,9 @@ class CardView(QGraphicsView):
             shadow.setOffset(5, 5)
             shadow.setColor(QColor(0, 0, 0, 180))  # Semi-transparent black!
             c.setGraphicsEffect(shadow)
+
+            # Position cards
+            c.setPos(c.position * self.card_spacing, 0)
 
             self.scene.addItem(c)
 
