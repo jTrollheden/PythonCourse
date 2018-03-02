@@ -184,17 +184,17 @@ class InteractionBox(QGroupBox):
                 cred = QInputDialog.getInt(self, "Raise", ("How much do you want to raise the old bet? The old bet was:"
                                                            + str(game_state.old_bet)))
                 if cred[1] and cred[0] > 0:
-                    state = game_state.players[1].raise_pot(cred[0], game_state)
-                    game_state.update_pot(cred[0]+game_state.old_bet)
+                    game_state.players[1].raise_pot(cred[0], game_state)
+                    if game_state.poor:
+                        QMessageBox.question(self, "", "You do not have enough credits",
+                                             QMessageBox.Ok)
                 else:
                     pass
             else:
                 cred = QInputDialog.getInt(self, "Bet", "How much do you want to bet?")
                 if cred and cred[0] > 0:
-                    state = game_state.players[1].bet(cred[0], game_state)
-                    if state:
-                        game_state.update_pot(cred[0])
-                    else:
+                    game_state.players[game_state.player_turn].bet(cred[0], game_state)
+                    if game_state.poor:
                         QMessageBox.question(self, "", "You do not have enough credits",
                                              QMessageBox.Ok)
                 else:
@@ -209,7 +209,19 @@ class InteractionBox(QGroupBox):
             # Fold
 
         def new_game():
-            1+1
+            if not game_state.running:
+                choice = QMessageBox.question(self, "", "Do you want to start a new game?", QMessageBox.Yes | QMessageBox.No)
+                if choice == QMessageBox.Yes:
+                    game_state.start_new_round()
+                else:
+                    pass
+            else:
+                choice = QMessageBox.question(self, "", "Do you want to start a new game and discard your current one?",
+                                              QMessageBox.Yes | QMessageBox.No)
+                if choice == QMessageBox.Yes:
+                    game_state.start_new_round()
+                else:
+                    pass
             # Ändra GameState till Playing
 
         def stop_playing():
@@ -242,14 +254,17 @@ class InteractionBox(QGroupBox):
         self.setMaximumHeight(self.sizeHint().height())
 
     def update(self):
-        if game_state.player_turn == 0:
+        if self.game_state.player_turn == 0:
             self.turn.setText("Game has not started")  # status of game
         else:
             self.turn.setText("Turn: Player " + str(self.game_state.player_turn))  # status of game
         self.pot.setText("The total pot is: " + str(self.game_state.pot) + "kr")  # status of game
-
-
-[game_state, centercards, player1, player2] = tx.execute()
+        if not self.game_state.running:
+            for b in self.buttons_game[:3]:
+                b.setEnabled(False)
+        if self.game_state.running:
+            for b in self.buttons_game[:3]:
+                b.setEnabled(True)
 
 
 def execute(game_state, centercards, player1, player2):
@@ -267,6 +282,3 @@ def execute(game_state, centercards, player1, player2):
     window_view.show()
 
     qt_app.exec()
-
-
-execute(game_state, centercards, player1, player2)

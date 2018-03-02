@@ -8,38 +8,41 @@ class GameState(QObject):
     def __init__(self, player1, player2):
         QObject.__init__(self)
         # TODO: dialog ruta där man matar in spelare, samt en loop
-        # TODO: där spelarna skapas.
+        # TODO: där spelarna skapas. Skapas nu i execute metoden
         self.players = [player1, player2]
         self.pot = 0
         self.running = False
         self.bet = False
         self.player_turn = 0
         self.old_bet = 0
+        self.poor = False
 
     def update_pot(self, inc):
         self.pot = self.pot + inc
         self.old_bet = inc
+        self.change_turn()
         self.data_changed.emit()
 
-    def change_turn(self, players):
-        players.active = not players.active
+    def change_turn(self):
         if self.player_turn == 0:
             self.player_turn = 1
         elif self.player_turn == 1:
             self.player_turn = 2
         else:
             self.player_turn = 1
-        return
 
     def start_new_round(self):
-        if self.running:
-            self.game_message.emit("Can't start game. Game already running")
-            # TODO: Fixa till dialog, "vill du starta om? Isf starta om hela spelet."
-        self.running = True
-        self.player_turn = 0
-        self.pot = 0
-        self.players[self.player_turn].set_active(True)
-        self.data_changed.emit()
+        if not self.running:
+            self.running = True
+            self.player_turn = 0
+            self.pot = 0
+            for p in self.players:
+                p.active=True
+            self.data_changed.emit()
+        else:
+            # TODO: Fixa execute TODON
+
+
 
     def won(self):
         self.wins += 1
@@ -80,20 +83,20 @@ class Player(cl.Hand, GameState):
             self.credits = self.credits - cred
             game_state.old_bet = cred
             game_state.bet = True
+            game_state.update_pot(cred)
+            game_state.poor = False
             self.data_changed.emit()
-            return True
         else:
-            return False
+            game_state.poor = True
 
     def raise_pot(self, cred, game_state):
-        if self.credits > (cred + game_state.old_bet):
+        if self.credits >= (cred + game_state.old_bet):
             self.credits = self.credits - cred - game_state.old_bet
+            game_state.update_pot(cred + game_state.old_bet)
+            game_state.poor = False
             self.data_changed.emit()
-            return True
         else:
-            return False
-
-        # Dialog box
+            game_state.poor = True
 
     def call_check(self):
         1+1
@@ -122,6 +125,8 @@ class CenterCards(cl.Hand, GameState):
         self.data_changed.emit()
 
 
+# TODO: Lägg in execute i GameState. Behöver ha looparna där inne om nya kort ska genereras.
+# TODO: Player och centercard can kombineras och initieras i GameState ist.
 def execute():
     deck = Deck()
     deck.create_deck()
@@ -141,9 +146,6 @@ def execute():
 
     game_state = GameState(player1, player2)
     return game_state, centercards, player1, player2
-
-
-[game_state, centercards, player1, player2] = execute()
 
 
 # TODO: FIXA SÅ ATT PENGARNA UPPDATERAS VID BETS
