@@ -1,15 +1,36 @@
 from PyQt5.QtCore import *
 import cardlib as cl
+import GUIdrawer as GUI
 
 
 class GameState(QObject):
     data_changed = pyqtSignal()
 
-    def __init__(self, player1, player2):
+    def __init__(self):
         QObject.__init__(self)
-        # TODO: dialog ruta där man matar in spelare, samt en loop
-        # TODO: där spelarna skapas. Skapas nu i execute metoden
-        self.players = [player1, player2]
+
+        deck = Deck()
+        deck.create_deck()
+        deck.shuffle_deck()
+
+        #pl = GUI.PlayerInput()
+        # TOdo : Fixa input
+        # https://www.tutorialspoint.com/pyqt/pyqt_qinputdialog_widget.htm
+        # https://stackoverflow.com/questions/17512542/getting-multiple-inputs-from-qinputdialog-in-qtcreator
+
+        self.player1 = Player("sofia", 3000)
+        self.player2 = Player("joel", 2000)
+
+        for i in range(2):
+            self.player1.add_card(deck.draw())
+            self.player2.add_card(deck.draw())
+
+        self.centercards = CenterCards()
+
+        for i in range(5):
+            self.centercards.add_card(deck.draw())
+
+        self.players = [self.player1, self.player2]
         self.pot = 0
         self.running = False
         self.bet = False
@@ -39,8 +60,8 @@ class GameState(QObject):
             for p in self.players:
                 p.active=True
             self.data_changed.emit()
-        else:
-            # TODO: Fixa execute TODON
+        #else:
+        #    # TODO: Fixa execute TODON
 
 
 
@@ -129,24 +150,8 @@ class CenterCards(cl.Hand, GameState):
 # TODO: Player och centercard can kombineras och initieras i GameState ist.
 # TODO: Fixa Gameview()GameState() i pokergame
 def execute():
-    deck = Deck()
-    deck.create_deck()
-    deck.shuffle_deck()
-
-    player1 = Player("sofia", 3000)
-    player2 = Player("joel", 2000)
-
-    for i in range(2):
-        player1.add_card(deck.draw())
-        player2.add_card(deck.draw())
-
-    centercards = CenterCards()
-
-    for i in range(5):
-        centercards.add_card(deck.draw())
-
-    game_state = GameState(player1, player2)
-    return game_state, centercards, player1, player2
+    game_state = GameState()
+    return game_state
 
 
 # TODO: FIXA SÅ ATT PENGARNA UPPDATERAS VID BETS

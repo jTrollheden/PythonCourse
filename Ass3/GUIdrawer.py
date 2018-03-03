@@ -1,4 +1,5 @@
 from PyQt5.QtGui import *
+from PyQt5.QtCore import *
 from PyQt5.QtSvg import *
 from PyQt5.QtWidgets import *
 import logicTexas as tx
@@ -7,6 +8,13 @@ import sys
 
 qt_app = QApplication(sys.argv)
 qt_app = QApplication.instance()
+
+
+class PlayerInput(QGroupBox):
+    def __init__(self):
+        super().__init__()
+
+        self.players = QInputDialog.getText(self, "Start", "Name the two players", "Name the second player")
 
 
 class TableBackground(QGraphicsScene):
@@ -267,9 +275,9 @@ class InteractionBox(QGroupBox):
                 b.setEnabled(True)
 
 
-def execute(game_state, centercards, player1, player2):
+def execute(game_state):
     intbox = InteractionBox(game_state)
-    game_view = GameView(centercards, player1, player2)
+    game_view = GameView(game_state.centercards, game_state.player1, game_state.player2)
 
     superlayout = QHBoxLayout()
     superlayout.addWidget(game_view)
