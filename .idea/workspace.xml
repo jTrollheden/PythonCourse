@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b58ae15-933d-409c-a621-8fcbf067daf0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Ass3/logicTexas.py" afterPath="$PROJECT_DIR$/Ass3/logicTexas.py" />
       <change beforePath="$PROJECT_DIR$/Ass3/pokergame.py" afterPath="$PROJECT_DIR$/Ass3/pokergame.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +18,7 @@
           <file leaf-file-name="logicTexas.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="344">
+                <state relative-caret-position="0">
                   <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="46" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -31,28 +30,10 @@
           <file leaf-file-name="pokergame.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="basicGUIdrawer.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#409#1253#0" expanded="false" />
-                    <element signature="e#1324#2225#0" expanded="false" />
-                    <element signature="e#2271#2415#0" expanded="false" />
-                    <element signature="e#2459#2587#0" expanded="false" />
-                    <element signature="e#2625#5670#0" expanded="false" />
-                    <element signature="e#5706#6236#0" expanded="false" />
-                    <element signature="e#6914#9081#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -65,8 +46,8 @@
           <file leaf-file-name="GUIdrawer.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="265">
-                  <caret line="222" column="21" lean-forward="true" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
+                <state relative-caret-position="3210">
+                  <caret line="222" column="21" lean-forward="false" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                     <element signature="e#229#373#0" expanded="false" />
@@ -233,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -255,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,6 +253,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,7 +448,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="1" y="23" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23255815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -718,22 +699,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/Test/pokergame.py" />
-    <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="23" />
-          <folding>
-            <element signature="e#409#1253#0" expanded="false" />
-            <element signature="e#1324#2225#0" expanded="false" />
-            <element signature="e#2271#2415#0" expanded="false" />
-            <element signature="e#2459#2587#0" expanded="false" />
-            <element signature="e#2625#5670#0" expanded="false" />
-            <element signature="e#5706#6236#0" expanded="false" />
-            <element signature="e#6914#9081#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ass1/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -789,7 +754,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/logicTexas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="0">
           <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="46" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -799,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/GUIdrawer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="222" column="21" lean-forward="true" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
+        <state relative-caret-position="3210">
+          <caret line="222" column="21" lean-forward="false" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#229#373#0" expanded="false" />
@@ -809,10 +774,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ass3/basicGUIdrawer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="23" />
+          <folding>
+            <element signature="e#409#1253#0" expanded="false" />
+            <element signature="e#1324#2225#0" expanded="false" />
+            <element signature="e#2271#2415#0" expanded="false" />
+            <element signature="e#2459#2587#0" expanded="false" />
+            <element signature="e#2625#5670#0" expanded="false" />
+            <element signature="e#5706#6236#0" expanded="false" />
+            <element signature="e#6914#9081#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ass3/pokergame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
